@@ -1,0 +1,64 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <title>Mystery Box</title>
+  <style>
+    body {
+      font-family: 'Trebuchet MS', sans-serif;
+      background: linear-gradient(to right, #ffecd2, #fcb69f);
+      text-align: center;
+      margin: 0;
+      padding: 50px;
+    }
+    h1 {
+      color: #333;
+    }
+    .box {
+      width: 200px;
+      height: 200px;
+      background: #4CAF50;
+      margin: 40px auto;
+      border-radius: 20px;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      color: white;
+      font-size: 1.5em;
+      cursor: pointer;
+      transition: transform 0.3s;
+    }
+    .box:hover {
+      transform: scale(1.1);
+    }
+    #surprise {
+      margin-top: 20px;
+      font-size: 1.2em;
+      color: #444;
+    }
+  </style>
+</head>
+<body>
+  <h1>Welcome to the Mystery Box!</h1>
+  <p>Click the box to reveal a random surprise.</p>
+  
+  <div class="box" onclick="revealSurprise()">🎁</div>
+  
+  <div id="surprise"></div>
+  
+  <script>
+    function revealSurprise() {
+      const surprises = [
+        "You found a golden key!",
+        "A cute puppy appears 🐶",
+        "You win a free cookie 🍪",
+        "A rainbow shines above 🌈",
+        "You discovered hidden treasure 💎",
+        "A wise owl gives advice 🦉"
+      ];
+      const randomIndex = Math.floor(Math.random() * surprises.length);
+      document.getElementById("surprise").innerText = surprises[randomIndex];
+    }
+  </script>
+</body>
+</html>
